@@ -1,0 +1,42 @@
+body{
+
+    background-color: white;
+    background-size: contain;
+    color:black;
+
+}
+
+
+.full{
+    height: 100vh; 
+    
+}
+
+.navigation > a {
+    color:black;
+}
+
+.stick{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+#left-pane{
+    background-color: white;
+    color: black;
+   }
+
+   .intro-para{
+       padding-bottom:2vh;
+   }
+
+   .tiles{
+       height: 30vh;
+       width: 40vh;
+       margin: 10vh;
+   }
+
+   .contact-icon{
+    margin: 5vh;
+   }
