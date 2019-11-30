@@ -14,99 +14,103 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
 </head>
 
 <body id="body">
+  <div id="fullpage">
+<!-- navigation -->
+      <!-- <div class="nav">
+          <a href="#" class="nav-item" id="prev">Previous Page</a> 
+            <p> <i class="up"></i></p>
+            
+            <p><i class="down"></i></p>
+            <a href="#" class="nav-item" id="next">Next Page</a> 
+          </div> -->
 
-  <!-- Start your project here-->
-  <div class="container">
-    <div class="row">
-      <div class="col" id="right-pane">
+<!-- intro -->
 
-        <div class="" style="background-color: transparent;" id="intro">
-          <div class="flex-center flex-column" id="">
-            <div class="card">
-              <img src="images/bichwaa.jpg" class="tiles" id="photo" alt="">
-            </div>
-            <div id="about">
-              <h1 class="d-flex justify-content-center" id="bichwaa">ABOUT ME</h1>
-              <p id="about-text1" class="intro-para"></p>
-              <p id="about-text2" class="intro-para"></p>
-              <p id="about-text3" class="intro-para"></p>
-            </div>
+    <section id="intro" class="section">
+      <h1 id="intro-text" class="intro-para"></h1>
 
-          </div>
-        </div>
+      
+  </section>
 
-        <div class="container" style="background-color: transparent;" id="skills">
-          <div class="flex-center flex-column" id="">
-            <div id="skills">
-              <h1 class="d-flex justify-content-center" id="">SKILLS</h1>
-              <div class=" " id="graphics">
-                <div class="">
-                  <img data-lax-preset="blurInOut" class="tiles" id="moran" src="images/HEET.jpg" alt="">
-                </div>
-                <div class="">
-                  <img class="tiles" data-lax-preset="blurIn" id="moran" src="images/moranblack-bg.png" alt="">
-                </div>
-              </div>
-              <div class=" " id="graphics2">
-                <div class="">
-                  <img class="tiles" data-lax-preset="blurInOut" src="images/kasan-oneday2.png" alt="">
-                </div>
-                <div class="">
-                  <img class="tiles" data-lax-preset="blurIn" src="images/pvlse1.jpg" alt="">
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="full" style="background-color: transparent;" id="gallery">
-            <div class="flex-center flex-column" id="gallery">
-              <div id="gallery">
-                <h1 class="d-flex justify-content-center" id="">CONTACTS</h1>
-                <div class="contacts d-flex flex-row-reverse">
-                  <div class="contact-icon">
-                    <span><img src="images/phone-solid.svg" alt=""></span>
-                    <span> <a href="#">Phone</a> </span>
-                  </div>
-
-                  <div class="contact-icon">
-                    <span><img src="images/github-square-brands.svg" alt=""></span>
-                    <span> <a href="#">github</a> </span>
-                  </div>
+  <!-- about -->
+  <section id="about" class="section">
+    <h1 id="" class="">ABOUT</h1>
+    <div id="about-container">
+      <img src="images/bichwaa.png" alt="">
 
 
-                  <div class="contact-icon">
-                    <span><img src="images/envelope-solid.svg" alt=""></span>
-                    <span> <a href="#">email</a> </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-
-        </div>
+      <div class="contacts">
+          <span class="email">NAME: NEWTON MUSYANI</span> 
+          <br>
+          <span class="email">LOCATION: TANZANIA</span> 
+          <br>
+          <span class="email">EMAIL: morandevelopers@gmail.com</span> 
+          <br>
       </div>
+
+      <div class="about-content">
+          <p>
+              I have been developing for the web front end since 2014 and I got into web back end, mobile & desktop around late 2016.
+               Currently I develop software for Moran Technologies.
+              <br> 
+              Over the years I have gained knowledge in different programming languages, graphics design, tools and techniques and spent
+              time working on projects for platforms including web, linux, Windows, Android, and iOS.
+              <br>
+              <!-- <img src="images/bichwaa.png" alt=""> -->
+              My arsenal of languages and tools; the full front-end stack (HTML, CSS, Javascript), Node Js, Python,
+              c++, Dart, Flutter, Django, Vue, React, Electron, Express, Selenium, other small libraries, Photoshop, gimp, Illustrator, Inkscape.
+      
+              Here is a link to <a href=""> my github</a> if you wish to see some open source projects I am involved with.
+              <br>
+              
+            </p>
+      </div>
+      
     </div>
+  </section>
+  <!-- portfolio  -->
+  <section id="portfolio" class="section">
+    <h1 id="" class="">CLIENTS</h1>
+
+    <div class="grid-container">
+      <figure id="port-1">
+        <a href="https://heet255.github.io/home/" target="_blank">
+            <img src="images/logo.png" alt="">
+        </a>
+      </figure>
+
+      <figure id="port-2">
+          <img src="images/malangwa-logo.png" alt="">
+        
+      </figure>
+
+      <figure id="port-3">
+          <img src="images/kasan-oneday2.png" alt="">
+      </figure>
+
+      <figure id="port-4">
+        
+        <img src="images/pvlse1.jpg" alt="">
+      </figure>
+    </div>
+
+    
+  </section>
   </div>
 
-  <!-- /Start your project here-->
 
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script type="text/javascript" src="js/lax.min.js"></script>
   <script type="text/javascript" src="js/js.js"></script>
   <script type="text/javascript" src="js/test.js"></script>
+  <!-- <script type="text/javascript" src="js/fullpage.js"></script> -->
+  <script>
+   
+  </script>
+  
 </body>
 
 </html>

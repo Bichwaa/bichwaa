@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fp-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fp-active {
+  opacity: 1;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.fp-inactive {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+/*# sourceMappingURL=fullpage.css.map */
