@@ -11,14 +11,14 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/onepagescroll.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
 </head>
 
 <body id="body">
-  <div id="fullpage">
+  <div class="pages">
 <!-- navigation -->
       <!-- <div class="nav">
           <a href="#" class="nav-item" id="prev">Previous Page</a> 
@@ -106,9 +106,18 @@
 
   <script type="text/javascript" src="js/js.js"></script>
   <script type="text/javascript" src="js/test.js"></script>
-  <!-- <script type="text/javascript" src="js/fullpage.js"></script> -->
+  <script type="text/javascript" src="js/onepagescroll.js"></script>
   <script>
-   
+   onepagescroll('div.pages',{
+  pageContainer: 'section',     //child elements selector. use if you don't want to use section for page.
+  animationType: 'ease-in-out', //determine css3 animation that will run when page changes
+                                //ex) 'ease', 'ease-out-in', 'cubic-bezier(0.2, 0.75, 0.5, 1.15)'
+  animationTime: 1000,           //define how long each page takes to animate, 0 for off
+  infinite: true,               //back to the last/first page when you scroll at first/last page
+  pagination: true,             //set show or hide pagination element.
+  keyboard: true,               //allow up/page-up and down/page-down key for page scroll
+  direction: 'vertical'         //determine direction of page scroll. options available are 'vertical' and 'horizontal'
+});
   </script>
   
 </body>

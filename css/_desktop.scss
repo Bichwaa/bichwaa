@@ -123,6 +123,9 @@ i {
     grid-gap:45px;
 
     figure{
+        a{
+            outline:0;
+        }
         img{
             width:100%;
             height:100%;
@@ -131,6 +134,7 @@ i {
 
             &:hover{
             transform: scale(0.85);
+            outline: 0;
             }
         }
     }

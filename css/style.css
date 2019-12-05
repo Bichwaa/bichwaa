@@ -129,6 +129,9 @@ section {
         grid-template-rows: repeat(2, 15vw);
     grid-gap: 45px;
   }
+  .grid-container figure a {
+    outline: 0;
+  }
   .grid-container figure img {
     width: 100%;
     height: 100%;
@@ -140,6 +143,7 @@ section {
   .grid-container figure img:hover {
     -webkit-transform: scale(0.85);
             transform: scale(0.85);
+    outline: 0;
   }
   .grid-container #port-2 {
     -ms-grid-column: 2;
