@@ -1,11 +1,11 @@
 
 
-//list of available sections
-sections = ['about', 'skills', 'gallery']
-
 var about = document.getElementById("about");
 var skills = document.getElementById("skills")
 
+
+const mq = window.matchMedia( "(max-width: 458px)" );
+let sections = Array.from(document.getElementsByTagName('section'));
 
 
 
@@ -35,6 +35,18 @@ function deploy(callback){
 
    window.onload =  function (){
     deploy();
+
+    
+    if(mq.matches){
+        let slider = document.getElementById('pages')
+        let ul = Array.from(this.document.getElementsByTagName('ul'))[0]
+      slider.classList.remove('pages')
+      sections.forEach((section)=>{
+          section.classList.remove('ops-page', 'section')
+      })
+    this.document.styleSheets[1].disabled=true;
+    ul.style.display='none'
+    }
     }
     
     
