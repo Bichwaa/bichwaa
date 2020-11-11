@@ -1,7 +1,5 @@
-
-
-var about = document.getElementById("about");
-var skills = document.getElementById("skills")
+let about = document.getElementById("about");
+let skills = document.getElementById("skills")
 
 
 const mq = window.matchMedia( "(max-width: 458px)" );
@@ -10,12 +8,12 @@ let sections = Array.from(document.getElementsByTagName('section'));
 
 
 // self typing about text
-var i = 0;
-var j=0;
+let i = 0;
+let j=0;
 let ilist=[]
-var elem1 = document.getElementById("intro-text")
-var txt = `Hi! I am Newton. Here to build the website and app you need while your focus remains on the business.`
-var speed = 60; /* The speed/duration of the effect in milliseconds */
+let elem1 = document.getElementById("intro-text")
+let txt = `Hi! I am Newton. Here to build the website and app you need while your focus remains on the business.`
+let speed = 35; /* The speed/duration of the effect in milliseconds */
 
 
 
@@ -24,17 +22,13 @@ function typeWriter() {
         if (i < txt.length ) {
             elem1.innerHTML += txt.charAt(i);
             i++;
-            setTimeout(typeWriter, speed);}
+            setTimeout(typeWriter, speed);
+        }
 }      
 
 
-function deploy(callback){
-    typeWriter();
-    setTimeout(callback,9000)
-}
-
    window.onload =  function (){
-    deploy();
+    typeWriter();
 
     
     if(mq.matches){
