@@ -1,46 +1,62 @@
-let about = document.getElementById("about");
-let skills = document.getElementById("skills")
+/**
+ * @description - A class whose instances mimics a human typing out a string to a 'text displaying html element'.
+ */
+class TypeWrite{
 
+    constructor(txt){
+        this.text = txt;
+        this.i = 0;
+        this.speed = 35; //The speed/duration of the effect in milliseconds 
+        this.executed = false; //you may want it to run only once.
+    }
 
-const mq = window.matchMedia( "(max-width: 458px)" );
-let sections = Array.from(document.getElementsByTagName('section'));
-
-
-
-// self typing about text
-let i = 0;
-let j=0;
-let ilist=[]
-let elem1 = document.getElementById("intro-text")
-let txt = `Hi! I am Newton. Here to build the website and app you need while your focus remains on the business.`
-let speed = 35; /* The speed/duration of the effect in milliseconds */
-
-
-
-function typeWriter() {
-
-        if (i < txt.length ) {
-            elem1.innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+    typewriteTo(el) {
+        if(this.i < this.text.length ) {
+            el.innerHTML += this.text.charAt(this.i);
+            this.i++;
+            setTimeout(()=>this.typewriteTo(el), this.speed);
         }
-}      
+    }      
+
+}
 
 
-   window.onload =  function (){
-    typeWriter();
+/**
+ * 
+ * @description - A helper function to tell you if an element is in the viewport
+ * @param {HTMLElement} elem  - Element whoe presence in the viewport we want to check.
+ * @returns {Boolean} 
+ */
+function isInViewport (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 
-    
-    if(mq.matches){
-        let slider = document.getElementById('pages')
-        let ul = Array.from(this.document.getElementsByTagName('ul'))[0]
-      slider.classList.remove('pages')
-      sections.forEach((section)=>{
-          section.classList.remove('ops-page', 'section')
-      })
-    this.document.styleSheets[1].disabled=true;
-    ul.style.display='none'
+
+
+let introTypewriteTarget = document.getElementById("intro-sidenote");
+let introSideText = `Hi! I am Newton. Here to build the website and app you need while your
+             focus remains on the business.`
+
+let clientsTypewriteTarget = document.getElementById('clients-sidenote');
+let clientsSideText = `Here are some of my clients. You can't see their faces but you can tell they are happy people.`
+
+//type intro text immediately after the page loads
+window.onload =  function (){
+let typeWriter = new TypeWrite(introSideText);
+typeWriter.typewriteTo(introTypewriteTarget)
+
+}
+
+//type clients text once it shows u in the viewport
+document.addEventListener("scroll",()=>{
+    if(isInViewport(clientsTypewriteTarget) && clientsTypewriteTarget.innerHTML==''){
+        const clientsTypewriter = new TypeWrite(clientsSideText);
+        clientsTypewriter.typewriteTo(clientsTypewriteTarget)
     }
-    }
-    
-    
+})

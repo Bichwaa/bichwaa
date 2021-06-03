@@ -17,9 +17,9 @@ body {
 }
 
 .section-title {
+  text-align: right;
   font-size: 400%;
   color: #bda657;
-  margin-right: 15%;
 }
 
 figure {
@@ -55,9 +55,19 @@ img {
   display: inline-block;
   padding-top: 1.5%;
   font-weight: 700;
+  font-size: 1.5rem;
 }
 
 #about-container .long p {
   font-size: 1.4rem;
+}
+
+.gold-text {
+  color: #91720e;
+}
+
+.side-text {
+  border-right: solid .5px #02997A;
+  padding-right: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
