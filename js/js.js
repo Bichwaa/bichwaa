@@ -3,10 +3,10 @@
  */
 class TypeWrite{
 
-    constructor(txt){
+    constructor(txt, speed = 35){
         this.text = txt;
         this.i = 0;
-        this.speed = 35; //The speed/duration of the effect in milliseconds 
+        this.speed = speed; //The speed/duration of the effect in milliseconds 
         this.executed = false; //you may want it to run only once.
     }
 
@@ -41,22 +41,22 @@ function isInViewport (elem) {
 
 let introTypewriteTarget = document.getElementById("intro-sidenote");
 let introSideText = `Hi! I am Newton. Here to build the website and app you need while your
-             focus remains on the business.`
+                     focus remains on your business.`
 
 let clientsTypewriteTarget = document.getElementById('clients-sidenote');
-let clientsSideText = `Here are some of my clients. You can't see their faces but you can tell they are happy people.`
+let clientsSideText = `Here are some of my clients. You can't see their faces but you can 
+                        tell they are happy people.`
 
 //type intro text immediately after the page loads
 window.onload =  function (){
 let typeWriter = new TypeWrite(introSideText);
-typeWriter.typewriteTo(introTypewriteTarget)
-
+typeWriter.typewriteTo(introTypewriteTarget);
 }
 
 //type clients text once it shows u in the viewport
 document.addEventListener("scroll",()=>{
     if(isInViewport(clientsTypewriteTarget) && clientsTypewriteTarget.innerHTML==''){
-        const clientsTypewriter = new TypeWrite(clientsSideText);
+        const clientsTypewriter = new TypeWrite(clientsSideText,speed = 70);
         clientsTypewriter.typewriteTo(clientsTypewriteTarget)
     }
 })
