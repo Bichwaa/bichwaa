@@ -1,9 +1,9 @@
 /**
  * @description - A class whose instances mimics a human typing out a string to a 'text displaying html element'.
  */
-class TypeWrite{
+class TypeWrite {
 
-    constructor(txt, speed = 35){
+    constructor(txt, speed = 35) {
         this.text = txt;
         this.i = 0;
         this.speed = speed; //The speed/duration of the effect in milliseconds 
@@ -11,12 +11,12 @@ class TypeWrite{
     }
 
     typewriteTo(el) {
-        if(this.i < this.text.length ) {
+        if (this.i < this.text.length) {
             el.innerHTML += this.text.charAt(this.i);
             this.i++;
-            setTimeout(()=>this.typewriteTo(el), this.speed);
+            setTimeout(() => this.typewriteTo(el), this.speed);
         }
-    }      
+    }
 
 }
 
@@ -27,7 +27,7 @@ class TypeWrite{
  * @param {HTMLElement} elem  - Element whoe presence in the viewport we want to check.
  * @returns {Boolean} 
  */
-function isInViewport (elem) {
+function isInViewport(elem) {
     var bounding = elem.getBoundingClientRect();
     return (
         bounding.top >= 0 &&
@@ -48,15 +48,15 @@ let clientsSideText = `Here are some of my clients. You can't see their faces bu
                         tell they are happy people.`
 
 //type intro text immediately after the page loads
-window.onload =  function (){
-let typeWriter = new TypeWrite(introSideText);
-typeWriter.typewriteTo(introTypewriteTarget);
+window.onload = function () {
+    let typeWriter = new TypeWrite(introSideText);
+    typeWriter.typewriteTo(introTypewriteTarget);
 }
 
 //type clients text once it shows u in the viewport
-document.addEventListener("scroll",()=>{
-    if(isInViewport(clientsTypewriteTarget) && clientsTypewriteTarget.innerHTML==''){
-        const clientsTypewriter = new TypeWrite(clientsSideText,speed = 70);
+document.addEventListener("scroll", () => {
+    if (isInViewport(clientsTypewriteTarget) && clientsTypewriteTarget.innerHTML == '') {
+        const clientsTypewriter = new TypeWrite(clientsSideText, speed = 70);
         clientsTypewriter.typewriteTo(clientsTypewriteTarget)
     }
 })

@@ -3,63 +3,65 @@
           box-sizing: border-box;
 }
 
+/* 
+    ## MOBILE FIRST 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
 body {
-  padding: 0 5rem;
+  padding: 0;
 }
 
-section {
-  height: 100vh;
+.side {
+  display: none;
 }
 
 .card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 27% 67%;
-      grid-template-columns: 27% 67%;
-  -webkit-column-gap: 5%;
-          column-gap: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5%;
 }
 
 .section-title {
-  text-align: right;
+  text-align: center;
   font-size: 400%;
   color: #bda657;
 }
 
-figure {
-  margin: 0;
-  padding: 0;
+figure img {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.grid-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -webkit-column-gap: 5%;
-          column-gap: 5%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/*straight outta old code*/
 #about-container .long img {
-  width: 14%;
-  height: 14%;
+  width: 44%;
+  height: 44%;
   -webkit-clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 80% 75%, 75% 100%, 50% 75%, 0% 75%);
   clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 80% 75%, 75% 100%, 50% 75%, 0% 75%);
   background-color: #d2e7fb;
   margin: 0 0 0 0;
 }
 
-.contacts span {
-  display: inline-block;
-  padding-top: 1.5%;
-  font-weight: 700;
-  font-size: 1.5rem;
+.grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 #about-container .long p {
@@ -70,8 +72,84 @@ img {
   color: #91720e;
 }
 
-.side-text {
-  border-right: solid .5px #02997A;
-  padding-right: 1rem;
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .side {
+    display: none;
+  }
+  #about-container .long img {
+    width: 44%;
+    height: 44%;
+    -webkit-clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 80% 75%, 75% 100%, 50% 75%, 0% 75%);
+    clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 80% 75%, 75% 100%, 50% 75%, 0% 75%);
+    background-color: #d2e7fb;
+    margin: 0 0 0 0;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 0 5rem;
+  }
+  .card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 27% 67%;
+        grid-template-columns: 27% 67%;
+    -webkit-column-gap: 5%;
+            column-gap: 5%;
+  }
+  .side {
+    display: block;
+  }
+  .section-title {
+    text-align: right;
+    font-size: 400%;
+    color: #bda657;
+  }
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 5%;
+            column-gap: 5%;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /*straight outta old code*/
+  #about-container .long img {
+    width: 34%;
+    height: 34%;
+    -webkit-clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 80% 75%, 75% 100%, 50% 75%, 0% 75%);
+    clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 80% 75%, 75% 100%, 50% 75%, 0% 75%);
+    background-color: #d2e7fb;
+    margin: 0 0 0 0;
+  }
+  .contacts span {
+    display: inline-block;
+    padding-top: 1.5%;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  #about-container .long p {
+    font-size: 1.4rem;
+  }
+  .gold-text {
+    color: #91720e;
+  }
+  .side-text {
+    border-right: solid .5px #02997A;
+    padding-right: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
