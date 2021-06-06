@@ -3,6 +3,11 @@
           box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'CutiveMono';
+  src: url("./CutiveMono-Regular.ttf");
+}
+
 /* 
     ## MOBILE FIRST 
     ##Device = Most of the Smartphones Mobiles (Portrait)
@@ -10,6 +15,7 @@
   */
 body {
   padding: 0;
+  font-family: CutiveMono;
 }
 
 .side {
@@ -64,8 +70,9 @@ img {
   height: auto;
 }
 
-#about-container .long p {
-  font-size: 1.4rem;
+.about-content {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .gold-text {
