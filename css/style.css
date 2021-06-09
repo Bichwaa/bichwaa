@@ -14,7 +14,7 @@
     ##Screen = B/w 320px to 479px
   */
 body {
-  padding: 0;
+  padding: 0 1rem;
   font-family: CutiveMono;
 }
 
