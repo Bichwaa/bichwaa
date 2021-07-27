@@ -69,6 +69,11 @@ img {
   height: auto;
 }
 
+#about-container .long .contacts{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .about-content {
   font-size: 1.2rem;
   font-weight: 600;
