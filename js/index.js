@@ -20,6 +20,10 @@ headerLogoConatiner.addEventListener('click', () => {
 
 const tl = gsap.timeline();
 
+const st = new SplitText("#text-primary", {type:"chars,words"})
+const words = st.words;
+
+
 tl.from("header", {yPercent:-100});
 
 tl.to(".header__logo-img", {rotationY: 360*4, duration:1.5, ease:"back", delay:-.5});
@@ -32,6 +36,8 @@ tl.from(".home-hero__socials",{opacity:0});
 
 tl.from(".text-primary",{height:0,fontSize:"0rem", duration:.1, stagger:.75});
 
-tl.from(".btn--bg", {backgroundColor:"black", color:"white", xPercent:50, duration:.5});;
+tl.staggerFrom(words, .4, {opacity:0, },0.1);
+
+tl.from(".btn--bg", {backgroundColor:"black", color:"white", xPercent:20, duration:.5});;
 
 // tl.to(".btn--bg", { color:"#9c579a"});
