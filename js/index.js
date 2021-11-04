@@ -32,6 +32,8 @@ tl.from(".home-hero",{opacity:0.4, delay:-3});
 
 tl.from(".home-hero__content",{opacity:0, xPercent:-100});
 
+tl.from(".heading-primary", {scaleY:0, stagger:0.25});
+
 tl.from(".home-hero__socials",{opacity:0});
 
 tl.from(".text-primary",{height:0,fontSize:"0rem", duration:.1, stagger:.75});

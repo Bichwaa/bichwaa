@@ -283,6 +283,7 @@ textarea {
   .home-hero {
     height: unset;
     min-height: unset;
+    padding: 3em 0;
   }
 }
 
