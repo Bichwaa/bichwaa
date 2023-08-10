@@ -20,8 +20,8 @@ headerLogoConatiner.addEventListener('click', () => {
 
 const tl = gsap.timeline();
 
-const st = new SplitText("#text-primary", {type:"chars,words"})
-const words = st.words;
+// const st = new SplitText("#text-primary", {type:"chars,words"})
+// const words = st.words;
 
 
 tl.from("header", {yPercent:-100});
@@ -38,7 +38,7 @@ tl.from(".home-hero__socials",{opacity:0});
 
 tl.from(".text-primary",{height:0,fontSize:"0rem", duration:.1, stagger:.75});
 
-tl.staggerFrom(words, .05, {opacity:0, },0.05);
+// tl.staggerFrom(words, .05, {opacity:0, },0.05);
 
 tl.from(".btn--bg", {backgroundColor:"black", color:"white", xPercent:4, duration:.5});;
 
