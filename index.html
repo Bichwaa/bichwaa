@@ -26,10 +26,25 @@
       background-color: #9C579A; /* Use the text color for the underline */
       margin-top: -3px; /* Adjust position to align with text */
     }
+
+    .no-height{
+      max-height:0;
+      transition: max-height 1s ease-in;
+    }
+
+    .full-height{
+      max-height:800px;
+      transition: max-height 1s ease-in;
+    }
+
+    .fade{
+      visibility: hidden;
+      transition: visibility .4s;
+    }
     </style>
 </head>
 
-<body class="h-[100vh] bg-[#F5F5EF]">
+<body class="lg:h-[100vh] bg-[#F5F5EF]">
   <header class="header lg:px-12 lg:py-6 lg:shadow-sm">
     <div class="header__content flex justify-between px-6 lg:px-0 pt-8">
       <div class="header__logo-container flex gap-8 items-center">
@@ -41,9 +56,9 @@
       </div>
       <div class="header__main hidden lg:block">
         <ul class="header__links lg:flex lg:gap-6 lg:items-center">
-          <li class="header__link-wrapper">
+          <!-- <li class="header__link-wrapper">
             <a href="#" class="header__link font-bold uppercase thick-underline "> Home </a>
-          </li>
+          </li> -->
           <li class="header__link-wrapper">
             <a href="./index.html#about" class="header__link font-semibold uppercase">About </a>
           </li>
@@ -57,17 +72,17 @@
           </li>
         </ul>
       </div>
-      <div class="header__main-ham-menu-cont lg:hidden">
-        <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
+      <div class="lg:hidden"  data-targ="menu-sm"  id="hamburger">
+        <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu"/>
       </div>
     </div>
 
-    <div class="header__sm-menu lg:hidden px-6 hidden">
+    <div class="header__sm-menu lg:hidden px-6 group ">
       <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link">
+        <ul class=" no-height group overflow-hidden" id="menu-sm">
+          <!-- <li class="header__sm-menu-link">
             <a href="./index.html"> Home </a>
-          </li>
+          </li> -->
 
           <li class="header__sm-menu-link">
             <a href="./index.html#about"> About </a>
@@ -90,27 +105,32 @@
 
         <div class="specialty">
           <h3 class="font-semibold text-2xl lg:text-3xl">Full stack web developer</h3>
-          <div class="my-2 lg:mb-8">
-            <h5 class="font-medium text-xl ml-4"><span class="text-[#9C579A]">&#8226;</span> Javascript</h5>
-            <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Vue, Nuxt, Svelte, Express, type ORM</p>
-          </div>
+          <div class="group no-height overflow-hidden lg:h-full" id="developer">
+            <div class="my-2 lg:mb-8">
+              <h5 class="font-medium text-xl ml-4"><span class="text-[#9C579A]">&#8226;</span> Javascript</h5>
+              <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Vue, Nuxt, Svelte, Express, type ORM</p>
+            </div>
 
-          <div class="my-2">
-            <h5 class="font-medium text-xl ml-4"> <span class="text-[#9C579A]">&#8226;</span> Python</h5>
-            <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Django, Flask</p>
-          </div>
+            <div class="my-2">
+              <h5 class="font-medium text-xl ml-4"> <span class="text-[#9C579A]">&#8226;</span> Python</h5>
+              <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Django, Flask</p>
+            </div>
 
-          <div class="my-2">
-            <h5 class="font-medium text-xl ml-4"> <span class="text-[#9C579A]">&#8226;</span> Dart</h5>
-            <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Flutter</p>
-          </div>
+            <div class="my-2">
+              <h5 class="font-medium text-xl ml-4"> <span class="text-[#9C579A]">&#8226;</span> Dart</h5>
+              <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Flutter</p>
+            </div>
 
-          <div class="mb-4">
-            <h5 class="font-medium text-xl ml-4"> <span class="text-[#9C579A]">&#8226;</span> Golang</h5>
-            <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Fiber, Gin</p>
-          </div>
+            <div class="mb-4">
+              <h5 class="font-medium text-xl ml-4"> <span class="text-[#9C579A]">&#8226;</span> Golang</h5>
+              <p class="ml-8"> <span class="text-[#9C579A]">&#45;</span> Fiber, Gin</p>
+            </div>
 
+            <p class="lg:hidden text-[#9C579A] cursor-pointer see-less text-sm" data-group="developer" data-counterpart="sm-1">See less.</p>
+          </div>
         </div>
+
+        <p class="lg:hidden text-[#9C579A] cursor-pointer see-more text-sm" data-group="developer" id="sm-1">See more ...</p>
 
       </div>
 
@@ -120,16 +140,28 @@
       </div>
 
 
-      <div class="lg:col-span-3 my-6 lg:grid lg:items-center order-3">
+      <div class="self-start lg:col-span-3 lg:my-6 lg:grid items-start lg:items-center order-3">
 
-        <div class="specialty lg:my-24">
+        <div class="specialty lg:my-20">
           <h3 class="font-semibold text-xl">Graphics designer</h3>
-          <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Photoshop, Illustrator, Gimp, Inkscape</h5>
+          <div class="group no-height overflow-hidden lg:h-full" id="designer">
+            <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Photoshop</h5>
+            <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Illustrator</h5>
+            <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Gimp</h5>
+            <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span>  Inkscape</h5>
+            <p class="lg:hidden text-[#9C579A] cursor-pointer see-less text-sm" data-group="designer" data-counterpart="sm-2">See less</p>
+          </div>
+          <p class="lg:hidden text-[#9C579A] cursor-pointer see-more text-sm" data-group="designer" id="sm-2">See more ...</p>
         </div>
 
-        <div class="specialty lg:my-24">
-          <h3 class="font-semibold text-xl">Writer</h3>
-          <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Technical, creative</h5>
+        <div class="specialty lg:my-20">
+          <h3 class="font-semibold text-xl transition">Writer</h3>
+          <div class="group no-height overflow-hidden lg:h-full" id="writer">
+            <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Technical</h5>
+            <h5 class="font-medium text-xl ml-4 my-2"> <span class="text-[#9C579A]">&#8226;</span> Creative</h5>
+            <p class="lg:hidden text-[#9C579A] cursor-pointer  see-less text-sm" data-group="writer" data-counterpart="sm-3">See less</p>
+          </div>
+          <p class="lg:hidden text-[#9C579A] cursor-pointer see-more text-sm" data-group="writer" id="sm-3">See more ...</p>
         </div>
 
       </div>
@@ -297,7 +329,7 @@
   </section>
 
   <footer class="main-footer bg-black py-4 mt-16 lg:mt-0">
-    <div class="main-container lg:px-96">
+    <div class="main-container lg:px-72">
       <div class="main-footer__upper flex flex-col-reverse items-center lg:flex-row-reverse lg:justify-between">
         <div class="main-footer__row main-footer__row-1">
           <h2 class="heading heading-sm main-footer__heading-sm my-2">
